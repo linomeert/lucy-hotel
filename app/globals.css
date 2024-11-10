@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Universal reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 :root {
   --background: #ffffff;
@@ -17,5 +28,27 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+}
+
+h2 {
+  font-size: 3rem
+}
+
+/* In your global styles or a custom CSS file */
+ul {
+  -ms-overflow-style: none;  /* for Internet Explorer */
+  scrollbar-width: none;     /* for Firefox */
+}
+
+ul::-webkit-scrollbar {
+  display: none;  /* for Chrome, Safari, and Opera */
+}
+
+/* Add this to your global CSS file or use Tailwind's @layer directive */
+.fade-out {
+  opacity: 0;
+}
+.fade-in {
+  opacity: 1;
 }

@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "city": "Paris",
+    "location": "Eiffel Tower",
+    "bio": "A luxurious hotel just steps away from the Eiffel Tower, offering stunning views and exclusive accommodations.",
+    "facilities": [
+      "Free WiFi",
+      "Indoor Pool",
+      "Spa",
+      "Fitness Center",
+      "Restaurant"
+    ],
+    "image": "images/17_Exterior_Boatandco_Amsterdam_the-july.jpg",
+    "image-interior": "images/interior1.jpg"
+  },
+  {
+    "id": 2,
+    "city": "Paris",
+    "location": "Montmartre",
+    "bio": "A cozy hotel nestled in Montmartre, offering a charming Parisian experience with art galleries and cafes nearby.",
+    "facilities": [
+      "Pet Friendly",
+      "Free Breakfast",
+      "Garden",
+      "Rooftop Terrace",
+      "Library"
+    ],
+    "image": "images/location2.avif",
+    "image-interior": "images/interior2.jpg"
+  },
+  {
+    "id": 3,
+    "city": "Paris",
+    "location": "Champs-Élysées",
+    "bio": "Elegant hotel located on the Champs-Élysées, known for its luxury shops and vibrant nightlife.",
+    "facilities": [
+      "Free WiFi",
+      "Spa",
+      "Business Center",
+      "Valet Parking",
+      "24-hour Room Service"
+    ],
+    "image": "images/location3.avif",
+    "image-interior": "images/interior3.jpg"
+  },
+  {
+    "id": 4,
+    "city": "New York",
+    "location": "Times Square",
+    "bio": "A modern hotel in Times Square, with easy access to Broadway, shopping, and dining.",
+    "facilities": [
+      "Free WiFi",
+      "Rooftop Bar",
+      "Fitness Center",
+      "24-hour Concierge",
+      "Business Center"
+    ],
+    "image": "images/location4.avif",
+    "image-interior": "images/interior4.jpg"
+  },
+  {
+    "id": 5,
+    "city": "New York",
+    "location": "Brooklyn",
+    "bio": "Chic hotel in Brooklyn, offering a unique blend of industrial style and urban charm.",
+    "facilities": [
+      "Pet Friendly",
+      "Bike Rentals",
+      "Coffee Shop",
+      "24-hour Gym",
+      "Art Gallery"
+    ],
+    "image": "images/location5.avif",
+    "image-interior": "images/interior5.jpg"
+  },
+  {
+    "id": 6,
+    "city": "New York",
+    "location": "Central Park",
+    "bio": "A sophisticated hotel near Central Park, perfect for both relaxation and exploring the city.",
+    "facilities": [
+      "Restaurant",
+      "Spa",
+      "Kids Club",
+      "Fitness Center",
+      "Room Service"
+    ],
+    "image": "images/location6.avif",
+    "image-interior": "images/interior6.jpg"
+  },
+  {
+    "id": 7,
+    "city": "Tokyo",
+    "location": "Shibuya",
+    "bio": "A sleek hotel situated in Shibuya, ideal for both business and leisure travelers exploring Tokyo.",
+    "facilities": [
+      "Free WiFi",
+      "Onsen Spa",
+      "Restaurant",
+      "Business Lounge",
+      "Airport Shuttle"
+    ],
+    "image": "images/location7.avif",
+    "image-interior": "images/interior7.jpg"
+  },
+  {
+    "id": 8,
+    "city": "Tokyo",
+    "location": "Ginza",
+    "bio": "Upscale hotel in Ginza, offering luxury shopping and exquisite dining experiences.",
+    "facilities": [
+      "Free Breakfast",
+      "Fitness Center",
+      "Rooftop Garden",
+      "Spa",
+      "Valet Parking"
+    ],
+    "image": "images/location8.jpg",
+    "image-interior": "images/interior8.jpg"
+  },
+  {
+    "id": 9,
+    "city": "Tokyo",
+    "location": "Asakusa",
+    "bio": "Traditional-style hotel in Asakusa, perfect for experiencing Tokyo's rich cultural heritage.",
+    "facilities": [
+      "Free WiFi",
+      "Tatami Rooms",
+      "Japanese Garden",
+      "Hot Spring Bath",
+      "Concierge"
+    ],
+    "image": "images/location9.jpg",
+    "image-interior": "images/interior9.jpg"
+  },
+  {
+    "id": 10,
+    "city": "Amsterdam",
+    "location": "City Center",
+    "bio": "Boutique hotel in the heart of Amsterdam, offering easy access to museums and canals.",
+    "facilities": [
+      "Free WiFi",
+      "Bike Rentals",
+      "Canal Views",
+      "Library",
+      "Pet Friendly"
+    ],
+    "image": "images/location10.jpg",
+    "image-interior": "images/interior10.jpg"
+  },
+  {
+    "id": 11,
+    "city": "Amsterdam",
+    "location": "Jordaan",
+    "bio": "A cozy hotel in the vibrant Jordaan neighborhood, surrounded by cafes, shops, and art galleries.",
+    "facilities": [
+      "Breakfast Included",
+      "Art Gallery",
+      "Coffee Bar",
+      "Library",
+      "Garden"
+    ],
+    "image": "images/location11.jpg",
+    "image-interior": "images/interior11.jpg"
+  },
+  {
+    "id": 12,
+    "city": "Amsterdam",
+    "location": "Museum Quarter",
+    "bio": "Elegant hotel located near the famous museums, ideal for art lovers and culture enthusiasts.",
+    "facilities": [
+      "Free WiFi",
+      "Spa",
+      "Fitness Center",
+      "Art Library",
+      "Concierge Service"
+    ],
+    "image": "images/location12.webp",
+    "image-interior": "images/interior12.jpg"
+  }
+]
