@@ -38,7 +38,7 @@ function Header() {
       <div>{tresholdPassed && <div className="text-2xl">THE LUCY</div>}</div>
       <div>
         {tresholdPassed && (
-          <button className="mr-5 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow ">
+          <button className="mr-5 bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-3xl	 shadow ">
             Book your stay
           </button>
         )}

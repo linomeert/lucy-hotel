@@ -58,7 +58,7 @@ function Locations() {
 
   return (
     <>
-      <section className="w-full bg-cover bg-center py-10">
+      <section className="w-full bg-cover bg-center py-20">
         <div className="container mx-auto px-4 h-full  justify-center">
           <div className="max-w-xl mb-5">
             <h2>LOCATIONS</h2>
