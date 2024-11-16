@@ -1,38 +1,55 @@
-import styles from "./Slide.module.css"; // Import the CSS Module
+"use client";
 
-function Slide({ hotel }) {
-  console.log(hotel.city);
-  return (
-    <>
-      <div className={`relative h-[340px]`}>
-        <img
-          height={"20rem"}
-          src={hotel["image-interior"]}
-          alt={hotel.location}
-          className={`mb-2 h-[20rem] w-full object-cover absolute z-1 `}
-        />
-        {/* Second image, visible by default */}
-        <img
-          height={"20rem"}
-          src={hotel.image}
-          alt={hotel.location}
-          className="mb-2 h-[20rem] w-full object-cover absolute z-2 hover:opacity-0 transition-opacity duration-500 ease-in-out"
-        />
-      </div>
-      <div className="flex items-center whitespace-nowrap">
-        <h3>{hotel.city.toUpperCase()}</h3>
-        <hr className="w-full mx-2" />
-        <h3>{hotel.location.toUpperCase()}</h3>
-      </div>
-      <br></br>
-      <p>{hotel.bio}</p>
-      <br></br>
-      <div className="flex items-center text-xs">
-        <p className="flex-1 truncate">{hotel.facilities.join(", ")}</p>
-        <a>EXPLORE</a>
-      </div>
-    </>
-  );
+// Define the props for the Slide component
+import useScrollEffect from "./hooks/useScrollEffect";
+
+interface Slide {
+  img?: string;
+  text?: string;
+  link?: {
+    text: string;
+    url: string;
+  } | null;
 }
+
+interface SlideProps {
+  slide: Slide;
+  isInView: boolean;
+}
+
+const Slide: React.FC<SlideProps> = ({ slide, isInView }) => {
+  console.log(isInView);
+
+  const { img, text, link } = slide;
+  return (
+    <div className="h-[400px]">
+      {img && (
+        <img
+          src={img}
+          alt="slide image"
+          style={{
+            transition: "transform 0.15s ease-out, opacity 0.5s ease-out", // Smooth transition for transform and opacity with different durations
+            opacity: `${isInView ? 1 : 0}`,
+          }}
+        />
+      )}
+      <div
+        className={`flex flex-col  h-full ${
+          link ? "justify-between" : "justify-end"
+        }`}
+      >
+        {text && <p>{text}</p>}
+        {link && (
+          <button
+            onClick={() => (window.location.href = link.url)} // or your own navigation logic
+            className="w-auto self-start bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded-3xl shadow mt-5"
+          >
+            {link.text}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default Slide;

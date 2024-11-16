@@ -1,0 +1,30 @@
+[
+    {
+      "img": "images/longer_stay_1.avif"
+    },
+    {
+      "text": "Extended Stay in Amsterdam? Look no further. Select from our range of premium apartment-hotels and become a true local. Giving you the space to live and the service to clean up after. Whether your visit is driven by business, home renovations, or simply a desire to experience the city, we have you covered.",
+      "link": {
+        "text": "Stay longer",
+        "url": "#"
+      }
+    },
+    { "img": "images/longer_stay_3.avif" },
+    {
+      "text": "Spacious, high quality rooms with kitchens and living areas."
+    },
+    { "img": "images/longer_stay_4.avif" },
+    {
+      "text": "Spacious, high quality rooms with kitchens and living areas."
+    },
+    { "img": "images/longer_stay_5.avif" },
+    { "img": "images/longer_stay_6.avif" },
+    {
+      "text": "Extended Stay in Amsterdam? Look no further. Select from our range of premium apartment-hotels and become a true local. Giving you the space to live and the service to clean up after. Whether your visit is driven by business, home renovations, or simply a desire to experience the city, we have you covered.",
+      "link": {
+        "text": "Stay longer",
+        "url": "#"
+      }
+    }
+]
+  

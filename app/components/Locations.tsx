@@ -5,14 +5,25 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import Slide from "./Slide";
+import Slide from "./Location";
 
-function Locations() {
-  const [locations, setLocations] = useState([]);
-  const [allLocations, setAllLocations] = useState([]);
-  const [cities, setCities] = useState([]);
-  const [selectedCity, setSelectedCity] = useState(null);
-  const [fadeClass, setFadeClass] = useState("fade-in");
+// Define types for the data
+interface Hotel {
+  id: string;
+  city: string;
+  location: string;
+  bio: string;
+  image: string;
+  "image-interior": string;
+  facilities: string[];
+}
+
+const Locations: React.FC = () => {
+  const [locations, setLocations] = useState<Hotel[]>([]);
+  const [allLocations, setAllLocations] = useState<Hotel[]>([]);
+  const [cities, setCities] = useState<string[]>([]);
+  const [selectedCity, setSelectedCity] = useState<string | null>(null);
+  const [fadeClass, setFadeClass] = useState<string>("fade-in");
 
   useEffect(() => {
     // Fetch the JSON file from the public directory
@@ -22,28 +33,27 @@ function Locations() {
       .catch((error) => console.error("Error loading locations:", error));
   }, []);
 
-  function handleResponse(data) {
+  const handleResponse = (data: Hotel[]) => {
     const uniqueCities = data
       .map((item) => item.city)
       .filter((city, index, self) => self.indexOf(city) === index);
     setCities(uniqueCities);
     setLocations(data);
     setAllLocations(data);
-  }
+  };
 
-  function filterList(e) {
+  const filterList = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // reset the cities
     e.preventDefault();
-    console.log(e.target.innerText);
-    console.log(selectedCity);
-    if (e.target.innerText.replace("•", "").trim() == selectedCity) return;
+    if (e.currentTarget.innerText.replace("•", "").trim() == selectedCity)
+      return;
     setFadeClass("fade-out");
 
     setTimeout(() => {
       setFadeClass("fade-in");
 
       const filteredLocations = allLocations.filter(
-        ({ city }) => city === e.target.innerText
+        ({ city }) => city === e?.currentTarget?.innerText
       );
 
       console.log(filteredLocations);
@@ -51,10 +61,10 @@ function Locations() {
         setSelectedCity(null);
         return setLocations(allLocations);
       }
-      setSelectedCity(e.target.innerText);
+      setSelectedCity(e.currentTarget.innerText);
       setLocations(filteredLocations);
     }, 100);
-  }
+  };
 
   return (
     <>
@@ -101,8 +111,6 @@ function Locations() {
                   spaceBetween={50}
                   slidesPerView={1.3}
                   grabCursor={true}
-                  onSlideChange={() => console.log("slide change")}
-                  onSwiper={(swiper) => console.log(swiper)}
                   breakpoints={{
                     640: {
                       // Mobile view
@@ -134,6 +142,6 @@ function Locations() {
       </section>
     </>
   );
-}
+};
 
 export default Locations;

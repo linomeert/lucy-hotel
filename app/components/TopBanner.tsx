@@ -1,4 +1,6 @@
-function TopBanner() {
+import React from "react";
+
+const TopBanner: React.FC = () => {
   return (
     <div className="w-full bg-lime-100	py-2 px-4">
       <p className="text-l text-black ">
@@ -6,6 +8,6 @@ function TopBanner() {
       </p>
     </div>
   );
-}
+};
 
 export default TopBanner;

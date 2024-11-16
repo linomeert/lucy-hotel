@@ -1,10 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 
-export function useScrollEffect(threshold: number = 0.5) {
-  const [scrollPos, setScrollPos] = useState(0);
-  const [isInView, setIsInView] = useState(false);  
-  const sectionRef = useRef<HTMLDivElement | null>(null);
+interface UseScrollEffectProps {
+    threshold: number;
+}
 
+// Return type of the hook
+interface UseScrollEffectReturn {
+    scrollPos: number | null;
+    sectionRef: React.RefObject<HTMLDivElement>;
+    isInView: boolean;
+}
+
+const useScrollEffect = ({ threshold }: UseScrollEffectProps): UseScrollEffectReturn => {
+    const [scrollPos, setScrollPos] = useState<number | null>(0);
+    const [isInView, setIsInView] = useState<boolean>(false);  
+    const sectionRef = useRef<HTMLDivElement | null>(null);
+    
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -46,3 +57,5 @@ export function useScrollEffect(threshold: number = 0.5) {
 
   return { scrollPos, sectionRef, isInView };  // Return isInView as a state, not ref
 }
+
+export default useScrollEffect

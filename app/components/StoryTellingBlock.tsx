@@ -1,8 +1,32 @@
 "use client";
-import { useScrollEffect } from "./hooks/useScrollEffect";
+import { useEffect, useState } from "react";
+import useScrollEffect from "./hooks/useScrollEffect";
 
-function storytellingBlock({ label, text, linkText, imageSources }) {
-  const { scrollPos, sectionRef, isInView } = useScrollEffect(0.1); // Use the hook with 50% threshold
+interface StoryTellingBlockProps {
+  label: string;
+  text: string;
+  linkText: string;
+  imageSources: string[];
+}
+
+const storyTellingBlock: React.FC<StoryTellingBlockProps> = ({
+  label,
+  text,
+  linkText,
+  imageSources,
+}) => {
+  const { scrollPos, sectionRef, isInView } = useScrollEffect({
+    threshold: 0.1,
+  }); // Use the hook with 10% threshold
+
+  const [YOffset, setYOffset] = useState(0);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.innerWidth > 640) {
+      setYOffset(100);
+    }
+  }, []);
+
   return (
     <section
       className="bg-[#de815d] w-full bg-cover bg-center relative grid content-center grid-cols-3 gap-8 md:gap-12 overflow-hidden"
@@ -15,7 +39,9 @@ function storytellingBlock({ label, text, linkText, imageSources }) {
             index === imageSources.length - 1 ? "order-last sm:order-none" : ""
           }
           style={{
-            transform: `translateY(${scrollPos * (0.1 + index * 0.05)}px)`, // Adjust each image's scroll effect slightly differently
+            transform: `translateY(${
+              (scrollPos || 0) * (0.1 + index * 0.05)
+            }px)`, // Adjust each image's scroll effect slightly differently
             transition: "transform 0.15s ease-out, opacity 0.5s ease-out", // Smooth transition for transform and opacity with different durations
             opacity: `${isInView ? 1 : 0}`,
           }}
@@ -29,9 +55,7 @@ function storytellingBlock({ label, text, linkText, imageSources }) {
       <article
         className="md:col-span-2 col-span-3 text-black max-w-2xl pr-4 p-3 md:p-0"
         style={{
-          transform: `translateY(${
-            -scrollPos * 0.02 + (window && window.innerWidth > 640 ? 100 : 0)
-          }px)`,
+          transform: `translateY(${-(scrollPos || 0) * 0.02 + YOffset}px)`,
         }}
       >
         <span className="md:text-md text-sm block">{label.toUpperCase()}</span>
@@ -40,6 +64,6 @@ function storytellingBlock({ label, text, linkText, imageSources }) {
       </article>
     </section>
   );
-}
+};
 
-export default storytellingBlock;
+export default storyTellingBlock;
